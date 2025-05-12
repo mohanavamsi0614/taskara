@@ -1,0 +1,4 @@
+requests
+playwright
+pymongo
+urllib3
