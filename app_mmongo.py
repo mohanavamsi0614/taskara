@@ -19,8 +19,6 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return "hi"
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
 print("lknkj")
 # Suppress InsecureRequestWarning globally
 warnings.simplefilter('ignore', InsecureRequestWarning)
@@ -369,4 +367,6 @@ if __name__ == "__main__":
         log(f"Error processing country Error: {e}")
 
     log("Main execution completed")
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
 
