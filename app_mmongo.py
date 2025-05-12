@@ -13,7 +13,15 @@ from urllib3.exceptions import InsecureRequestWarning
 import concurrent.futures
 from pymongo import MongoClient
 from flask import Flask
+import asyncio
+from playwright.async_api import async_playwright
 
+async def install_browsers():
+    from playwright.__main__ import main as playwright_main
+    await asyncio.to_thread(playwright_main, "install", "chromium")
+
+# Install Playwright browsers before running the script logic
+asyncio.run(install_browsers())
 app = Flask(__name__)
 
 @app.route('/')
