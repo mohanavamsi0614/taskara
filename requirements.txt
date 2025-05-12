@@ -2,3 +2,5 @@ requests
 playwright
 pymongo
 urllib3
+boto3
+flask
