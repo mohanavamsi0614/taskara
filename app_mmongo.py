@@ -228,7 +228,7 @@ def find_report_links(url):
                             print(f"🔘 Clicking '{keyword}'...")
                             clickable.scroll_into_view_if_needed()
                             clickable.click()
-                            page.wait_for_timeout(3000)
+                            page.wait_for_timeout(1000)
                             page_number += 1
                             done_years.append(keyword)
                             found_clickable = True
@@ -312,7 +312,7 @@ def process_input(websites, bucket_name="companiesannualreports", country="unkno
     
     processed_urls = set()  # Track processed URLs
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         futures = []
         
         for website in websites:
